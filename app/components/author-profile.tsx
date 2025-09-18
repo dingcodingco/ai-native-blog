@@ -31,7 +31,7 @@ export default function AuthorProfile({
           </div>
         )}
         <div className="flex-1 text-center sm:text-left">
-          <h3 className="text-lg font-semibold mb-2">{author}</h3>
+          <h3 className="text-lg font-semibold mb-2">Sir {author}</h3>
           {authorBio && (
             <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
               {authorBio}

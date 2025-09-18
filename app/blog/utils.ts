@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  dingcodingco?: string
   author?: string
   authorImage?: string
   authorBio?: string
