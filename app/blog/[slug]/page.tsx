@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 import { marked } from 'marked'
+import AuthorProfile from 'app/components/author-profile'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -95,6 +96,15 @@ export default async function Blog({ params }) {
       <article className="prose">
         <div dangerouslySetInnerHTML={{ __html: marked(post.content) }} />
       </article>
+      {post.metadata.author && (
+        <AuthorProfile
+          author={post.metadata.author}
+          authorImage={post.metadata.authorImage}
+          authorBio={post.metadata.authorBio}
+          authorGithub={post.metadata.authorGithub}
+          authorTwitter={post.metadata.authorTwitter}
+        />
+      )}
     </section>
   )
 }
